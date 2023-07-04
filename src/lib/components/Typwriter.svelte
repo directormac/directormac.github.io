@@ -25,4 +25,4 @@
 	}
 </script>
 
-<h1 transition:typewriter={{ speed: 1 }}>{text}</h1>
+<h1 class="text-3xl font-bold" transition:typewriter={{ speed: 1 }}>{text}</h1>
