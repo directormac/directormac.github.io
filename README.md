@@ -80,6 +80,31 @@ const config = {
 export default config;
 ```
 
+Given that all links in this app should also use the base path
+
+```svelte
+<script lang="ts">
+	import { base } from '$app/paths';
+</script>
+
+<nav>
+	<a href={$base}>Home</a>
+	<a href="{$base}/about">About</a>
+	<a href="{$base}/contents">Content</a>
+	<a href="{$base}/contents/morecontents">More Content</a>
+</nav>
+```
+
+> A `.nojekyll` is already provided in the script
+
+```json
+{
+	"scripts": {
+		"gh-pages": "vite build && touch build/.nojekyll && npx gh-pages -d build -t true"
+	}
+}
+```
+
 ### For Docker deployments
 
 A `dockerfile` , `ningx/nginx.conf` is already provided in this repo modify them as you see fit
