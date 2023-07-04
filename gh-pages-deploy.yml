@@ -1,3 +1,6 @@
+# This is an example config from adapter-static to github pages but i cannot get it to work
+# github is asking for a repo name when deploying
+
 name: Deploy to GitHub Pages
 
 on:
