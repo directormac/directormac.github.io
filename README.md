@@ -109,8 +109,8 @@ After your first commit to remote run this command it will create a gh-pages bra
 pnpm gh-pages
 ```
 after that go to your repo on `github.com` and go to the Settings tab selec Pages and choose gh-pages as your branch
-![image](https://github.com/directormac/directormac.github.io/assets/5866196/4371701d-4d83-4cc0-b759-4eb1599b2a0a)
-![AnotherImage](./static/gh-pages.png)
+![gh-pages.png](https://github.com/directormac/directormac.github.io/assets/5866196/4371701d-4d83-4cc0-b759-4eb1599b2a0a)
+
 ### For Docker deployments
 
 A `dockerfile` , `ningx/nginx.conf` is already provided in this repo modify them as you see fit
