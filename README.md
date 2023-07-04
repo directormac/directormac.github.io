@@ -41,7 +41,16 @@ my cloud provider but i use cloudflare as of this writing
 
 ## This app is deployable via github pages and a docker instance with nginx
 
-### For GH Pages follow this guide
+### Github Pages Option 1
+
+A workflow no config deployment is added at `.github/workflows/gh-pages-deploy.yml`
+
+Check or Set the Pages on Section to use Github Actions
+![option_1](https://github.com/directormac/directormac.github.io/assets/5866196/6122f04c-0e67-4aeb-8daa-3cf37a061a78)
+
+### For Github Pages Option 2
+
+> before continuing please delete the `.github` directory as it will affect this workflow
 
 A script is added at `package.json`
 
@@ -112,7 +121,7 @@ pnpm gh-pages
 ```
 
 after that go to your repo on `github.com` and go to the Settings tab selec Pages and choose gh-pages as your branch
-![image](https://github.com/directormac/directormac.github.io/assets/5866196/6122f04c-0e67-4aeb-8daa-3cf37a061a78)
+![option_1](https://github.com/directormac/directormac.github.io/assets/5866196/6122f04c-0e67-4aeb-8daa-3cf37a061a78)
 
 ### For Docker deployments
 
