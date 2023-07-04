@@ -121,7 +121,7 @@ pnpm gh-pages
 ```
 
 after that go to your repo on `github.com` and go to the Settings tab selec Pages and choose gh-pages as your branch
-![option_1](https://github.com/directormac/directormac.github.io/assets/5866196/6122f04c-0e67-4aeb-8daa-3cf37a061a78)
+![option_2](https://github.com/directormac/directormac.github.io/assets/5866196/26958862-b020-4c66-af6e-d49f1c69446e)
 
 ### For Docker deployments
 
