@@ -73,6 +73,8 @@ pnpm gh-pages
 if its on a seperate repo e.g `username.github.io/specialpage` and repo name is `specialpage`
 appen the following into the `svelte.config.js`
 
+TODO Edit based on new conflig on svelte.config.js
+
 ```diff
 import adapter from "@sveltejs/adapter-static";
 
@@ -81,7 +83,7 @@ const config = {
   kit: {
     adapter: adapter(),
 +   paths: {
-+     base: process.env.NODE_ENV === "production" ? "/anotherslash" : "",
++			base: dev ? '' : process.env.BASE_PATH
 +   },
   },
 };
