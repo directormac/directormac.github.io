@@ -1,6 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
+const BASE_PATH = 'directormac.github.io';
 const dev = process.argv.includes('dev');
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -20,7 +21,7 @@ const config = {
 		},
 		//Incase you changed the basepath please uncomment the following lines below
 		paths: {
-			base: dev ? '' : process.env.BASE_PATH
+			base: dev ? '' : BASE_PATH
 		}
 	}
 };
