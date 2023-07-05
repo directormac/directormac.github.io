@@ -62,10 +62,10 @@
 
 <style lang="postcss">
 	header {
-		@apply container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center;
+		@apply container mx-auto flex justify-between p-5  items-center;
 	}
 	.logo {
-		@apply flex font-medium items-center text-gray-900 mb-4 md:mb-0;
+		@apply flex font-medium items-center text-2xl mb-4 md:mb-0;
 	}
 	.menu {
 		@apply hidden lg:flex lg:items-center lg:w-auto w-full text-center;
