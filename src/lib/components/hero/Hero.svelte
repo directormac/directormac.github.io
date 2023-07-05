@@ -7,10 +7,10 @@
 <section class="text-gray-600 body-font">
 	<div class="content">
 		<div
-			class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
+			class="lg:flex-grow lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
 		>
 			<span
-				class="title-font lg:text-8xl sm:text-4xl text-3xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600"
+				class="title-font lg:text-8xl md:text-6xl sm:text-4xl text-3xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600"
 			>
 				<Typewriter text={greet} speed={0.5} />
 			</span>
