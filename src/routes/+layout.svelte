@@ -4,12 +4,12 @@
 </script>
 
 <Navigation />
-<div class="main">
+<main>
 	<slot />
-</div>
+</main>
 
 <style lang="postcss">
-	.main {
+	main {
 		@apply flex flex-col  h-screen px-10;
 	}
 </style>

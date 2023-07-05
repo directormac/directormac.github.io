@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+
+	import { page } from '$app/stores';
+
 	import ToggleTheme from './ToggleTheme.svelte';
 	type Links = {
 		href: string;
@@ -38,21 +41,23 @@
 				height="20"
 				viewBox="0 0 20 20"
 			>
-				<title>menu</title>
+				<title>Menu</title>
 				<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg
 			>
 		</label>
 		<input type="checkbox" class="hidden" id="menu-toggle" />
-		<div class="menu items-center align-middle justify-center" id="menu">
+		<div class="menu" id="menu">
 			<nav>
 				<ul class="link">
 					{#each links as link}
-						<li>
+						<li class:active={$page.url.pathname === link.href}>
 							<a href={link.href}>{link.name}</a>
 						</li>
 					{/each}
 					<li>
-						<ToggleTheme />
+						<div>
+							<ToggleTheme />
+						</div>
 					</li>
 				</ul>
 			</nav>
@@ -62,13 +67,13 @@
 
 <style lang="postcss">
 	header {
-		@apply container mx-auto flex justify-between p-5  items-center;
+		@apply lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2;
 	}
 	.logo {
-		@apply flex font-medium items-center text-2xl mb-4 md:mb-0;
+		@apply flex flex-1 justify-between font-medium items-center text-2xl mb-4 md:mb-0;
 	}
 	.menu {
-		@apply hidden lg:flex lg:items-center lg:w-auto w-full text-center;
+		@apply hidden justify-between  lg:flex lg:items-center lg:w-auto w-full text-center;
 	}
 	#menu-toggle:checked + #menu {
 		display: block;
@@ -76,7 +81,13 @@
 	.link {
 		@apply flex-grow lg:flex items-center justify-between text-base pt-4 lg:pt-0;
 	}
+	.link li {
+		@apply active:bg-sky-600;
+	}
+	li.active {
+		@apply text-green-600;
+	}
 	.link a {
-		@apply lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400;
+		@apply lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-green-400;
 	}
 </style>
