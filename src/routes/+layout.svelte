@@ -1,15 +1,25 @@
 <script lang="ts">
+	import Header from '$components/Header.svelte';
 	import Navigation from '$components/Navigation.svelte';
 	import '../app.css';
 </script>
 
-<Navigation />
-<main>
-	<slot />
-</main>
+<svelte:window
+	on:sveltekit:navigation-start={() => {
+		console.log('Navigation started!');
+	}}
+	on:sveltekit:navigation-end={() => {
+		console.log('Navigation ended!');
+	}}
+/>
 
-<style lang="postcss">
-	main {
-		@apply flex flex-col  h-screen px-10;
-	}
-</style>
+<div class="container mx-auto px-8 ">
+	<Header />
+	<slot />
+</div>
+
+<!-- <style lang="postcss"> -->
+<!-- 	main { -->
+<!-- 		@apply flex flex-col  h-screen px-10; -->
+<!-- 	} -->
+<!-- </style> -->

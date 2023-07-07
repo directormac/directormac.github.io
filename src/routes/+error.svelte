@@ -6,7 +6,7 @@
 	<h1 class="text-red-600 text-3xl">{$page.url} : {$page.error?.message}</h1>
 </div>
 
-<style>
+<style lang="postcss">
 	div {
 		height: 100vh;
 		width: 100vw;

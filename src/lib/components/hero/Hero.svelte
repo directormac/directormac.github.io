@@ -1,6 +1,7 @@
 <script lang="ts">
-	export let greet = 'Hello, i am';
-	export let name = 'Your name';
+	export let greetings = 'Your Gretings Here';
+	export let description = 'Your Description Here';
+	export let name = 'Your  Name Here';
 	import Typewriter from '$components/Typwriter.svelte';
 </script>
 
@@ -10,19 +11,16 @@
 			class="lg:flex-grow lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
 		>
 			<span
-				class="title-font lg:text-8xl md:text-6xl sm:text-4xl text-3xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600"
+				class="title-font lg:text-8xl md:text-6xl text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600"
 			>
-				<Typewriter text={greet} speed={0.5} />
+				<Typewriter text={greetings} speed={0.5} />
 			</span>
-			<h1 class="title-font font-medium lg:text-8xl md:text-4xl sm:text-4xl mb-4">
+			<h1 class="title-font font-medium lg:text-8xl md:text-6xl text-4xl mb-4">
 				{name}
 				<br class="hidden lg:inline-block" />
 			</h1>
 			<p class="mb-8 leading-relaxed">
-				640K ought to be enough for anybody. (Bill Gates, 1981) Software is like sex: It’s better
-				when it’s free. (Linus Torvalds) The trouble with programmers is that you can never tell
-				what a programmer is doing until it’s too late. (Seymour Cray) The cheapest, fastest, and
-				most reliable components are those that aren’t there. (Gordon Bell)
+				{description}
 			</p>
 			<div class="flex justify-center">
 				<button
