@@ -16,22 +16,24 @@
 				<Typewriter text={greetings} speed={0.5} />
 			</span>
 			<h1 class="title-font font-medium lg:text-8xl md:text-6xl text-4xl mb-4">
-				{name}
+				<span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-green-800">
+					{name}</span
+				>
 				<br class="hidden lg:inline-block" />
 			</h1>
 			<p class="mb-8 leading-relaxed">
 				{description}
 			</p>
-			<div class="flex justify-center">
-				<button
-					class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-					>About me</button
-				>
-				<button
-					class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
-					>Github</button
-				>
-			</div>
+			<!-- <div class="flex justify-center"> -->
+			<!-- 	<button -->
+			<!-- 		class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" -->
+			<!-- 		>About me</button -->
+			<!-- 	> -->
+			<!-- 	<button -->
+			<!-- 		class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg" -->
+			<!-- 		>Github</button -->
+			<!-- 	> -->
+			<!-- </div> -->
 		</div>
 		<!-- <div class="lg:max-w-lg lg:w-full w-1/2"> -->
 		<!-- 	<img -->

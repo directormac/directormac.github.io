@@ -5,6 +5,6 @@
 </script>
 
 <svelte:head><title>{title}</title></svelte:head>
-<Hero2 {name} {description} {greetings} />
+<!-- <Hero2 {name} {description} {greetings} /> -->
 
 <Hero {name} {description} {greetings} />

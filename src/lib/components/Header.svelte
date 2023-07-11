@@ -39,7 +39,7 @@
 	<!-- Logo Section -->
 	<div class="basis-1/2 md:basis-1/6 flex items-center">
 		<Terminal class="mr-2 mx-2 icon-color" />
-		<a class="text-2xl logo-color" href={`${base}/`}>{brand}</a>
+		<a class="text-2xl" href={`${base}/`}>{brand}</a>
 	</div>
 
 	<!-- Links Section -->

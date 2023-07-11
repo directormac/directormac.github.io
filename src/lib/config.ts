@@ -1,6 +1,9 @@
-export const title = 'A Portfolio';
+export const title = 'Director Mac';
 export const brand = 'DirectorMac';
-export const name = 'Director Mac';
+export const name = 'Mark Asena';
 export const greetings = 'Hello i am,';
-export const description =
-	'640K ought to be enough for anybody. (Bill Gates, 1981) Software is like sex: It’s better when it’s free. (Linus Torvalds) The trouble with programmers is that you can never tell what a programmer is doing until it’s too late. (Seymour Cray) The cheapest, fastest, and	most reliable components are those that aren’t there. (Gordon Bell)';
+export const description = `A network engineer by trade, a hobbyist software engineer ,
+I have been working in the IT industry for more than 10 years. 
+My skills include network design, implementation, and troubleshooting, as well as managing projects which involve network infrastructure. 
+I am also a hobbyist software engineer who enjoys working with  JavaScript, and TypeScript with the following frameworks/library react, tailwindcss, nestjs, prisma, directus and more on nodejs platform.
+I am currently working on a few projects with rust and svelte that I hope to share with you soon.`;
