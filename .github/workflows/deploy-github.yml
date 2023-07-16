@@ -24,7 +24,7 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        run: pnpm install && pnpm dlx playwright install --with-deps chromium
+        run: pnpm install && npx playwright install
 
       - name: build
         env:
