@@ -34,9 +34,7 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
 		"jsdom": "^22.1.0",
-		"lucide-svelte": "^0.258.0",
 		"mdsvex": "^0.11.0",
-		"mermaid": "^10.2.4",
 		"postcss": "^8.4.24",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
@@ -52,8 +50,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"rehype-mermaidjs": "^1.0.1",
-		"mermaid-isomorphic": "^2.1.0",
+		"lucide-svelte": "^0.258.0",
+		"mermaid": "^10.2.4",
 		"remark-mermaidjs": "^5.0.1"
 	}
 }
