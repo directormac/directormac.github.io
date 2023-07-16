@@ -21,16 +21,22 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.20.4",
+		"@sveltejs/vite-plugin-svelte": "^2.4.2",
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/typography": "^0.5.9",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/svelte": "^4.0.3",
+		"@types/testing-library__jest-dom": "^5.14.8",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"autoprefixer": "^10.4.14",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
+		"jsdom": "^22.1.0",
 		"lucide-svelte": "^0.258.0",
 		"mdsvex": "^0.11.0",
+		"mermaid": "^10.2.4",
 		"postcss": "^8.4.24",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
@@ -44,5 +50,10 @@
 		"vite": "^4.3.6",
 		"vitest": "^0.32.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"rehype-mermaidjs": "^1.0.1",
+		"mermaid-isomorphic": "^2.1.0",
+		"remark-mermaidjs": "^5.0.1"
+	}
 }

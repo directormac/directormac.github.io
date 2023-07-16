@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { brand } from '$lib/config';
+	import { brand } from '../config';
 	import { base } from '$app/paths';
 	import { ChevronsDown, Terminal } from 'lucide-svelte';
 	import { page } from '$app/stores';
@@ -92,7 +92,7 @@
 	li:hover {
 		border-color: var(--green);
 	}
-	.logo-color {
-		color: var(--tokyo-blue);
-	}
+	/* .logo-color { */
+	/* 	color: var(--tokyo-blue); */
+	/* } */
 </style>

@@ -35,5 +35,5 @@
 </script>
 
 {#if start}
-	<span transition:typewriter={{ speed }}>{text}</span>
+	<h1 transition:typewriter={{ speed }}>{text}</h1>
 {/if}

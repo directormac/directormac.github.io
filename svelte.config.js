@@ -4,11 +4,15 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 import { defineMDSveXConfig, mdsvex, escapeSvelte } from 'mdsvex';
 import shiki from 'shiki';
 
+import mermaid from 'mermaid';
+mermaid.initialize({ mermaid: { theme: { light: 'neutral', dark: 'dark' } } });
+
+import remarkMermaid from 'remark-mermaidjs';
 const mdSvexInit = defineMDSveXConfig({
 	extensions: ['.svelte.md', '.md', '.svx'],
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
-			const highlighter = await shiki.getHighlighter({ theme: 'nord' });
+			const highlighter = await shiki.getHighlighter({ theme: 'github-dark' });
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
 			return `{@html \`${html}\`}`;
 		}
@@ -16,7 +20,7 @@ const mdSvexInit = defineMDSveXConfig({
 	smartypants: {
 		dashes: 'oldschool'
 	},
-	remarkPlugins: [],
+	remarkPlugins: [remarkMermaid],
 	rehypePlugins: []
 });
 
