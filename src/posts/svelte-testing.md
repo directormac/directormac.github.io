@@ -119,7 +119,159 @@ pnpm add -D @testing-library/user-event
 
 [Read more here](https://testing-library.com/docs/user-event/setup)
 
-TODO
+it is basically has more to offer than `fireEvent`, We will now also look more into testing svelte components
+with props, and will be using the `getByTestId` where the elements that we will be testing must have a `data-testid`
+property.
+
+Here is our `LoginForm.svelte`
+
+```svelte
+<script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+
+	let email = '';
+	let password = '';
+	let isFormSubmitted = false;
+
+	// Email regex to validate email
+	$: isEmailValid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
+
+	// Password length validation
+	$: isPasswordValid = password.length <= 8;
+
+	// Function to handle form submission
+	function handleSubmit() {
+		if (isEmailValid && isPasswordValid) {
+			isFormSubmitted = true;
+			dispatch('submit', { email, password });
+		}
+	}
+</script>
+
+<div>
+	<form data-testid="login-form" on:submit|preventDefault={handleSubmit}>
+		<label for="email">Email</label>
+		<input
+			data-testid="email-input"
+			type="email"
+			id="email"
+			name="email"
+			placeholder="Email"
+			required
+			bind:value={email}
+		/>
+		<label for="password">Password</label>
+		<input
+			data-testid="password-input"
+			type="password"
+			id="password"
+			name="password"
+			placeholder="Password"
+			required
+			bind:value={password}
+		/>
+		<button type="submit" data-testid="login-button" disabled={!isEmailValid || !isPasswordValid}>
+			Login
+		</button>
+	</form>
+</div>
+
+<style>
+	div {
+		width: 50vw;
+		/* height: 30vh; */
+		border: 1px solid black;
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+		margin-top: 2rem;
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-grow: 1;
+	}
+
+	button {
+		margin-top: 1rem;
+		font-size: 1rem;
+	}
+</style>
+```
+
+And our test file `loginForm.test.ts`
+
+```typescript
+import { render } from '@testing-library/svelte';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it } from 'vitest';
+// this  is required for custom jest matchers like toBeInTheDocument
+import '@testing-library/jest-dom';
+// importing the component itself
+import LoginForm from './LoginForm.svelte';
+
+const user = userEvent.setup();
+
+describe('LoginForm component test', async () => {
+	// Rendering everything by getByTestId which looks for data-testid=""
+	it('Should render form and children with initial conditions', () => {
+		const { getByTestId } = render(LoginForm);
+
+		// Check form if rendered
+		expect(getByTestId('login-form')).toBeInTheDocument();
+
+		// Check both inputs if rendered
+		expect(getByTestId('email-input')).toBeInTheDocument();
+		expect(getByTestId('password-input')).toBeInTheDocument();
+
+		// Check button if rendered && disabled
+		expect(getByTestId('login-button')).toBeInTheDocument();
+		expect(getByTestId('login-button')).toBeDisabled();
+	});
+
+	it('Should enable button after email input', async () => {
+		const { getByTestId } = render(LoginForm);
+
+		// User inputs element at email-input
+		await user.type(getByTestId('email-input'), 'test@test.com');
+
+		// Checks if input has value
+		expect(getByTestId('email-input')).toHaveValue('test@test.com');
+
+		// Login Button Should be enabled
+		expect(getByTestId('login-button')).toBeEnabled();
+	});
+
+	it('Should require password-input', async () => {
+		const { getByTestId } = render(LoginForm);
+		// User input email
+		await user.type(getByTestId('email-input'), 'test@test.com');
+		// User clicks Login button
+		await user.click(getByTestId('login-button'));
+		// Checks password-input invalid
+		expect(getByTestId('password-input')).toBeInvalid();
+	});
+
+	it('Should submit form', async () => {
+		// Initiliaze component with props
+		const { getByTestId, component } = render(LoginForm, {
+			props: {
+				email: 'test@test.com',
+				password: 'testpassword'
+			}
+		});
+
+		// Click Submit button
+		await user.click(getByTestId('login-button'));
+
+		// expect isFormSubmitted prop to be true
+		expect(component.isFormSubmitted === true);
+	});
+});
+```
 
 ## TODO more tests including playwright
 
