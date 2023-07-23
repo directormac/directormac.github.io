@@ -26,6 +26,64 @@ Things we will need
 - [@sveltejs/vite-plugin-svelte](https://github.com/sveltejs/vite-plugin-svelte)
 - [@testing-library/jest-dom](https://github.com/testing-library/jest-dom) and its type [@types/testing-library\_\_jest-dom](https://www.npmjs.com/package/@types/testing-library__jest-dom)
 
+optional if you want a web ui to check the unit tests install `@vitest/ui`
+
+```sh
+# Install
+pnpm add -D @vitest/ui
+
+# Run test with the following commadnd
+vitest --ui
+```
+
+as of this writing 18-07-23 your `pacakge.json` should look like this
+
+```json
+{
+	"name": "app",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "npm run test:integration && npm run test:unit",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write .",
+		"test:integration": "playwright test",
+		"test:unit": "vitest --ui"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.28.1",
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.20.4",
+		"@sveltejs/vite-plugin-svelte": "^2.4.2",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/svelte": "^4.0.3",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/testing-library__jest-dom": "^5.14.8",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"@vitest/ui": "^0.33.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte": "^2.30.0",
+		"jsdom": "^22.1.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.10.1",
+		"svelte": "^4.0.5",
+		"svelte-check": "^3.4.3",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.4.2",
+		"vitest": "^0.32.2"
+	},
+	"type": "module"
+}
+```
+
 We need the jest-dom for more extendible `expect` methods
 
 Now install everything as dev dependency

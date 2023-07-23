@@ -1,5 +1,5 @@
 export const title = 'Director Mac';
-export const brand = 'DirectorMac';
+export const brand = 'DirectorMac1';
 export const name = 'Mark Asena';
 export const greetings = 'Hello i am,';
 export const description = `A network engineer by trade, a hobbyist software engineer ,
